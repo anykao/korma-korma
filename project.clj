@@ -8,6 +8,7 @@
                  [com.oracle/ojdbc "1.4"]
                  [mysql/mysql-connector-java "5.1.21"]
                  [korma  "0.3.0-RC5"]
+                 [doric  "0.8.0"];; Clojure table layout
                  [conf-er  "1.0.1"]
                  [log4j "1.2.15"
                   :exclusions [javax.mail/mail
@@ -15,7 +16,9 @@
                                com.sun.jdmk/jmxtools
                                com.sun.jmx/jmxri]]
                  ]
-  :plugins  [[lein-localrepo  "0.5.0"]]
+  :plugins  [[s3-wagon-private  "1.1.2"]
+             [lein-localrepo  "0.5.0"]]
   :profiles  {:dev  {:dependencies  [[alembic  "0.1.3"]]}}
   :jvm-opts  ["-Dconfig=config.conf"]
+  :repositories  [["private"  {:url  "s3p://mybucketofme/releases/"}]]
   :main korma-tool.core)
