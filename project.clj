@@ -15,10 +15,11 @@
                                javax.jms/jms
                                com.sun.jdmk/jmxtools
                                com.sun.jmx/jmxri]]
+                 [spyscope  "0.1.3"]
                  ]
   :plugins  [[s3-wagon-private  "1.1.2"]
              [lein-localrepo  "0.5.0"]]
   :profiles  {:dev  {:dependencies  [[alembic  "0.1.3"]]}}
-  :jvm-opts  ["-Dconfig=config.conf"]
+  :jvm-opts  ["-Dconfig=config.clj"]
   :repositories  [["private"  {:url  "s3p://mybucketofme/releases/"}]]
-  :main korma-tool.core)
+  :main korma-tool.mysql)
